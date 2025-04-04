@@ -1,0 +1,476 @@
+/* === GENERAL RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #fff;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the body takes up the full viewport height */
+}
+
+main {
+  flex: 1; /* Allows the main content to grow and push the footer down */
+}
+
+/* === HEADER === */
+header {
+  background-color: #89CFF0;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: white;
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  font-family: 'Italiana', serif;
+  color: white;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+nav a:hover {
+  opacity: 0.8;
+}
+
+/* === HAMBURGER MENU === */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  display: block;
+  border-radius: 2px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+/* === MOBILE STYLES === */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+    background-color: #89CFF0;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #89CFF0;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+    border-top: 2px solid white;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-family: 'Italiana', serif;
+  color: #89CFF0;
+  text-align: center;
+}
+
+h1 { font-size: 2.5rem; margin-bottom: 20px; }
+h2 { font-size: 2rem; margin-bottom: 15px; }
+h3 { font-size: 1.5rem; margin-bottom: 10px; }
+
+/* === BANNER === */
+header.banner {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+header.banner .banner-image {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  display: block;
+}
+
+/* Banner Section */
+.banner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 40px; /* Adds bottom margin for spacing after the banner */
+  overflow: hidden; /* Ensures the image stays within the container */
+  border-radius: 10px; /* Adds rounded corners to the container */
+}
+
+.banner-image {
+  width: 100%; /* Ensures the image scales to fit the container's width */
+  height: 100%; /* Ensures the image fills the container's height */
+  object-fit: cover; /* Ensures the image fills the container while maintaining its aspect ratio */
+  display: block; /* Removes any inline spacing issues */
+}
+
+/* General Section Styling */
+section {
+  width: 100%;
+  max-width: 1200px; /* Matches the banner's max-width */
+  margin: 0 auto 40px; /* Adds bottom margin for spacing between sections */
+  padding: 20px; /* Adds padding inside the section */
+  box-sizing: border-box; /* Ensures padding is included in width */
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* === ABOUT, INVENTORY, CONTACT === */
+.about, .inventory, .contact {
+  width: 100%; /* Ensures full width */
+  max-width: 1200px; /* Matches the banner's max-width */
+  margin: 0 auto; /* Centers the section */
+  padding: 20px; /* Adds padding inside the section */
+  background-color: #f5faff; /* Optional: Light background for contrast */
+  border-radius: 10px; /* Optional: Adds rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+  margin-bottom: 40px; /* Adds space between these sections */
+}
+
+.inventory {
+  text-align: center; /* Centers the content inside the inventory section */
+}
+
+.about h2,
+.inventory h2,
+.contact h2 {
+  font-family: 'Italiana', serif;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.about p,
+.inventory p {
+  font-size: 1rem;
+}
+
+/* About Section Paragraph Spacing */
+.about p {
+  text-align: justify; /* Justifies the text */
+  hyphens: auto; /* Enables automatic hyphenation */
+  margin-bottom: 1.5rem; /* Adds space between paragraphs */
+  line-height: 1.6; /* Improves readability */
+}
+
+/* Browse Inventory Button */
+.browse-inventory {
+  text-align: center;
+}
+
+.browse-inventory .btn, .contact .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 15px;
+  text-decoration: none;
+  background-color: #89CFF0;
+  color: white;
+  border-radius: 30px;
+  font-size: 1.1rem;
+}
+
+.browse-inventory .btn:hover, .contact .btn:hover {
+  background-color: #66b3cc;
+}
+
+/* === BUTTON === */
+.inventory-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background: #89CFF0;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  margin: 0 auto; /* Centers the button horizontally */
+}
+
+.inventory-button:hover {
+  background: #6bbbe0;
+}
+
+/* === CONTACT FORM === */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form input,
+form textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+form button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  background: #89CFF0;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #6bbbe0;
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #89CFF0;
+  color: white;
+  font-size: 0.9rem;
+  margin-top: auto; /* Pushes the footer to the bottom when content is short */
+}
+
+/* New Footer Styles */
+.site-footer {
+  background-color: #89CFF0;
+  color: white;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 1.5rem;
+}
+
+.footer-logo {
+  max-height: 50px;
+  margin-bottom: 0.5rem;
+}
+
+.footer-left p {
+  margin-top: 0.5rem;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 0.8;
+}
+
+.footer-links i {
+  font-size: 1.2rem;
+}
+
+/* Footer Logo */
+.footer-logo {
+  width: 150px;
+  height: 150x;
+  object-fit: contain;
+}
+
+/* Footer Logo Text */
+.footer-logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem; /* Adjust size as needed */
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+/* Mobile Footer Styles */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+}
+
+/* === INVENTORY PAGE STYLES === */
+.inventory-main {
+  padding: 20px;
+}
+
+.inventory-intro {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Center the car-item */
+.inventory-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centers the car items horizontally */
+  gap: 20px; /* Adds spacing between car items */
+}
+
+.car-item {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 20px;
+  padding: 15px;
+  text-align: center;
+}
+
+.car-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.car-details {
+  margin-top: 15px;
+}
+
+.car-details h3 {
+  color: #89CFF0;
+}
+
+.car-details .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #89CFF0;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.car-details .btn:hover {
+  background-color: #66b3cc;
+}
+
+/* Center the "Available Cars" heading */
+.inventory-list h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Mobile-Friendly Styles for Inventory Page */
+@media (max-width: 768px) {
+  .inventory-list {
+    flex-direction: column; /* Stack car items vertically on smaller screens */
+    align-items: center; /* Center-align the items */
+  }
+
+  .car-item {
+    width: 90%; /* Make car items take up most of the screen width */
+    margin: 15px 0; /* Add vertical spacing between items */
+  }
+
+  .car-image {
+    height: auto; /* Ensure the image scales properly */
+  }
+}
